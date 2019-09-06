@@ -1,0 +1,49 @@
+main{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 27px;
+}
+
+section{
+  border: solid 2px blue;
+  text-align: left;
+  padding: 15px;
+  flex-grow: 2;
+}
+.notskills{
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 2;
+  max-width: 70%;
+}
+.skills{
+  flex-grow: 1;
+}
+
+header{
+  display: flex;
+  padding: 15px;
+  border: solid red 2px;
+}
+
+.head{
+margin: 15px;
+}
+.offset{
+  margin-right: auto;
+}
+
+#username, #password, #login{
+  height: 40px;
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.flexColumn{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 30px;
+  padding: 100px;
+  align-content: center;
+}
