@@ -16,23 +16,25 @@ class App extends React.Component{
     }
   };
 
-  createElement() {
+  /*createElement() {
     let element;
     
-  }
-
-
+  }*/
 
   render(){
     return (
-      <body>
+      <section>
         <link rel="stylesheet" href = "temp.css"></link>
-        <Header/>
-        <Route path = '/login' component = {Login}/>
-        <Route path = '/home' component = {Character}/>
-        <Route path = '/create' component = {Create}/>
+        <Route path = '/' component={Header}/>
+        <Switch>
+          <Route exact path = '/' component = {Login}/>
+          <Route path = '/login' component = {Login}/>
+          <Route path = '/home' component = {Character}/>
+          <Route path = '/create' component = {Create}/>
+        </Switch>
+        
 
-      </body>
+      </section>
     );
   }
 }

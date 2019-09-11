@@ -1,5 +1,8 @@
 import React from "react";
-function Character() {
+function Character(props) {
+  if (!localStorage.getItem('dnd-client-auth-token')){
+    props.history.push('/login')
+  }
   return (
     <main>
       <section className="notskills">
