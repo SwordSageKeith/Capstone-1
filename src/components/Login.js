@@ -3,9 +3,6 @@ import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service';
 
 class Login extends React.Component{
-  /*constructor(props){
-    super(props);
-  }*/
   handlesubmit = (event)  =>{
     event.preventDefault();
     this.props.history.push('/home');
@@ -22,6 +19,7 @@ class Login extends React.Component{
       x.username.value = ''
       x.password.value = ''
       TokenService.saveAuthToken(res.authToken)
+      TokenService.saveID(res.id)
       this.props.history.push('/home')
     })
   }

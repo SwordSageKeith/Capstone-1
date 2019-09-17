@@ -16,11 +16,6 @@ class App extends React.Component{
     }
   };
 
-  /*createElement() {
-    let element;
-    
-  }*/
-
   render(){
     return (
       <section>

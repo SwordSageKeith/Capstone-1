@@ -2,9 +2,6 @@ import React from 'react';
 import tokenService from '../services/token-service'
 
  class Header extends React.Component{
-  /*constructor(props){
-    super(props);
-  }*/
   handleCreate = (event)  =>{
     event.preventDefault();
     this.props.history.push('/create');
