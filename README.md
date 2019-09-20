@@ -10,3 +10,8 @@ There is still some work to be done, like editing or deleting characters.
 The main page displays a list of all the characters a user has, that are buttons to switch to that character.
 The page displays character information in 4 sections. The first is basic information about the character,
 such as name, race, and level. The second seciton displays the 6 core stats that a character has.
+Third section is a description of the character, and the fourth is their skills.
+
+Future plans:
+Allow editing and deletion of characters.
+Include more information such as feats, equipment, etc

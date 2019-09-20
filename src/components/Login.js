@@ -25,6 +25,7 @@ class Login extends React.Component {
         TokenService.saveID(res.id);
         this.props.func(true);
         this.props.history.push("/home");
+        this.setState({})
       }
     });
   };
