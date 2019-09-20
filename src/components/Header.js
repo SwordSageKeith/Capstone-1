@@ -6,15 +6,18 @@ import TokenService from '../services/token-service';
   handleCreate = (event)  =>{
     event.preventDefault();
     this.props.history.push('/create');
+    this.setState({})
   }
   handeleLogout = (event) => {
     event.preventDefault();
     tokenService.clearAuthToken();
     this.props.history.replace('/login');
+    this.setState({})
   }
   handleHome = (event) => {
     event.preventDefault();
     this.props.history.push('home');
+    this.setState({})
   }
   ifToken =() =>{
     if (TokenService.getAuthToken()){
