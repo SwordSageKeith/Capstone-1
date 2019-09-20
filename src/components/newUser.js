@@ -1,8 +1,7 @@
 import React from "react";
 import AuthApiService from "../services/auth-api-service";
-import TokenService from "../services/token-service";
 
-class Login extends React.Component {
+class NewUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,46 +12,34 @@ class Login extends React.Component {
   newSubmit = ev => {
     ev.preventDefault();
     let x = ev.target;
-    AuthApiService.postLogin({
+    AuthApiService.postUser({
       username: x.username.value,
       password: x.password.value
     }).then(res => {
-      if (res.error){
-        this.setState({error: res.error})
-      }
-      else if (res) {
-        TokenService.saveAuthToken(res.authToken);
-        TokenService.saveID(res.id);
-        this.props.func(true);
-        this.props.history.push("/home");
+      if (res !== undefined) {
+        this.setState({ error: res.error });
+        if (!res.error) this.props.history.push("/login");
       }
     });
   };
-
-  newUser = () => {
-    this.props.history.push('user')
-  }
 
   render() {
     return (
       <form id="LoginForm" onSubmit={this.newSubmit}>
         <p id="error">{this.state.error}</p>
-        <label htmlFor="username">Username: </label>
+        <label htmlFor="username">What is your Username: </label>
         <br />
         <input id="username" type="text" placeholder="Username" required />
         <br />
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password">What is your Password:</label>
         <br />
         <input id="password" type="text" placeholder="Password" required />
-        <button type="submit" id="login">
-          Login
-        </button>
         <br />
-        <button type="button" id="newUser" onClick={this.newUser}>
-          New User
+        <button type="submit" id="newUser">
+          Create User
         </button>
       </form>
     );
   }
 }
-export default Login;
+export default NewUser;

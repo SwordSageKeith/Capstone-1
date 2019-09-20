@@ -16,8 +16,6 @@ const apiService = {
     )
   },
   sendChar(char){
-    console.log(char)
-    let id = TokenService.getID()
     return fetch(`${config.API_ENDPOINT}home/create`, {
       headers:{
         "Authorization": `bearer ${TokenService.getAuthToken()}`,

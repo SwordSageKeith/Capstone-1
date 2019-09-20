@@ -19,8 +19,8 @@ class Create extends React.Component{
   };
 
   onNext = ev => {
-    //ev.preventDefault();
-    let x = document.getElementById("create").elements
+    ev.preventDefault();
+    let x = ev.target
     if(this.state.step === 0){
       this.setState({
         sendChar:{
@@ -30,16 +30,17 @@ class Create extends React.Component{
           level: x.level.value,
           hp: x.hp.value,
           ac: x.ac.value,
-          bab: x.bab.value
+          bab: x.bab.value,
+          desc: x.desc.value
         }
       })
-      x.name.value = ''
-      x.race.value = ''
-      x.class.value = ''
-      x.level.value = ''
-      x.hp.value = ''
-      x.ac.value = ''
-      x.bab.value = ''
+      x.name.value = '12'
+      x.race.value = '12'
+      x.class.value = '12'
+      x.level.value = '12'
+      x.hp.value = '12'
+      x.ac.value = '12'
+      x.bab.value = '0'
     } else if (this.state.step === 1){
       this.setState({
         sendStats:{
@@ -51,12 +52,12 @@ class Create extends React.Component{
           cha: x.cha.value
         }
       })
-      x.str.value = ''
-      x.dex.value = ''
-      x.con.value = ''
-      x.wis.value = ''
-      x.int.value = ''
-      x.cha.value = ''
+      x.str.value = '0'
+      x.dex.value = '0'
+      x.con.value = '0'
+      x.wis.value = '0'
+      x.int.value = '0'
+      x.cha.value = '0'
     } else {
       this.setState({
         sendSkills: {
@@ -88,32 +89,27 @@ class Create extends React.Component{
     this.setState({step: this.state.step+1})
   }
 
-  onLast = ev => {
-
-  }
-
-
   render(){
     if(this.state.step === 0){
       return (
-        <div>
+        <form className = "center" onSubmit={this.onNext}>
           {createService.char()}
-          <button onClick={() => this.onNext()}>Next</button>
-        </div>
+          <button type="submit" id="next" >Next</button>
+        </form>
        )
     } else if (this.state.step === 1){
       return (
-        <div>
+        <form className = "center" onSubmit={this.onNext}>
           {createService.stats()}
-          <button onClick={() => this.onNext()}>Next</button>
-        </div>
+          <button type="submit" id="next" >Next</button>
+        </form>
        )
     } else {
       return (
-        <div>
+        <form className = "center" onSubmit={this.onNext}>
           {createService.skills()}
-          <button onClick={() => this.onNext()}>Next</button>
-        </div>
+          <button type="submit" id="next" >Next</button>
+        </form>
        )
     }
 

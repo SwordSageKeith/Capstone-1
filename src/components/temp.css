@@ -2,13 +2,20 @@ main{
   display: flex;
   flex-wrap: wrap;
   font-size: 27px;
+  background-image: url('../parchment.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Chilanka', cursive;
 }
 
 section{
-  border: solid 2px blue;
+  border: solid 4px rgba(100, 100, 100, 0.5);
   text-align: left;
   padding: 15px;
   flex-grow: 2;
+  background-image: url('../parchment.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .notskills{
   display: flex;
@@ -23,7 +30,8 @@ section{
 header{
   display: flex;
   padding: 15px;
-  border: solid red 2px;
+  border: solid 4px rgba(100, 100, 100, 0.5);
+  font-family: 'Dosis', sans-serif;
 }
 
 .head{
@@ -32,11 +40,45 @@ margin: 15px;
 .offset{
   margin-right: auto;
 }
+.full{
+  min-height: 100vh;
+}
 
-#username, #password, #login{
+#username, #password, #login, #newUser, .create{
+  font-size: 20px;
   height: 40px;
   margin-bottom: 15px;
   width: 50%;
+  font-family: 'Dosis', sans-serif;
+}
+button{
+  border: solid 2px rgba(100, 100, 100, 0.5);
+  border-radius: 8px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+}
+button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#next{
+  width: 30vw;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center{
+  text-align: center;
+  min-height: 100vh;
+  font-family: 'Dosis', sans-serif;
+}
+
+.skl{
+  text-align: center;
+}
+
+.char{
+  min-width: 100px;
+  min-height: 30px;
 }
 
 .flexColumn{
@@ -46,4 +88,55 @@ margin: 15px;
   font-size: 30px;
   padding: 100px;
   align-content: center;
+}
+
+.selectButtons{
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.desc, .notskills, .skills, .selectButtons, .margin{
+  margin-top: 5px;
+}
+.stats{
+  margin-left: 5px;
+}
+.skills{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+#LoginForm{
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+}
+#error{
+  color: red;
+}
+
+@media only screen and (max-width: 770px){
+  .notskills{
+    display: flex;
+    max-width:100%;
+  }
+  section{
+    min-width: 150px;
+  }
+  .stats{
+    margin-top: 5px;
+    margin-left: 0px;
+  }
+  .skills{
+    display: inline;
+  }
+  .head{
+    margin: 5px;
+  }
+  h1{
+    font-size: 20px;
+  }
 }
