@@ -16,7 +16,7 @@ import TokenService from '../services/token-service';
   }
   handleHome = (event) => {
     event.preventDefault();
-    if (TokenService.getID)
+    if (TokenService.getID())
       this.props.history.push('home');
     this.setState({})
   }
