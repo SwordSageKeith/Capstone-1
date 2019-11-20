@@ -3,6 +3,7 @@ Users can create an account and create however many characters they wish.
 
 live app: https://character-manager.herokuapp.com
 github: https://github.com/SwordSageKeith/Capstone-1
+api: https://github.com/SwordSageKeith/Dnd-server
 
 The goal was to make a user freindly app that allows players to easily access key character information.
 There is still some work to be done, like editing or deleting characters.
